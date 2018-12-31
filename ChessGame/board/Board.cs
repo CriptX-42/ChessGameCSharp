@@ -20,5 +20,10 @@ namespace board
         {
             return pieces[line, columns];
         }
+        public void putPiece(Piece p, Position pos)
+        {
+            pieces[pos.line, pos.column] = p;
+            p.position = pos;
+        }
     }
 }

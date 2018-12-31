@@ -15,12 +15,13 @@ namespace ChessGame
                 {
                     if(tab.piece(i, j) == null)
                     {
-                        Console.WriteLine("- ");
+                        Console.Write("- ");
                     }
                     else{
-                        Console.WriteLine(tab.piece(i, j) + " ");
+                        Console.Write(tab.piece(i, j) + " ");
                     }
                 }
+                Console.WriteLine();
             }
         }
     }
