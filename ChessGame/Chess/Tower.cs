@@ -75,7 +75,7 @@ namespace Chess
             while (tab.validPosition(pos) && canMove(pos))
             {
                 mat[pos.line, pos.column] = true;
-                if (tab.piece(pos) != null || tab.piece(pos).color != this.color)
+                if (tab.piece(pos) != null && tab.piece(pos).color != this.color)
                 {
                     break;
                 }
