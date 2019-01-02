@@ -24,6 +24,13 @@ namespace ChessGame
                     Console.WriteLine("Type a origin position: ");
                     Position origin = Tela.readChessPosition().toPosition();
 
+                    bool[,] possiblePositions = round.tab.piece(origin).possibleMovements();
+
+                    Console.Clear();
+                    Tela.printBoard(round.tab, possiblePositions);
+
+                    Tela.printBoard(round.tab);
+
                     Console.WriteLine("Type a destiny position: ");
                     Position destiny = Tela.readChessPosition().toPosition();
 

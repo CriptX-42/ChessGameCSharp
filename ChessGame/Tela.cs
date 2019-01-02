@@ -12,23 +12,44 @@ namespace ChessGame
         {
             for (int i = 0; i < tab.lines; i++)
             {
-                Console.Write(8 - i + " ");
+                Console.Write(8 - i + "| ");
                 for (int j = 0; j < tab.columns; j++)
                 {
-                    if(tab.piece(i, j) == null)
-                    {
-                        Console.Write("- ");
-                    }
-                    else{
-                        Tela.printPiece(tab.piece(i, j));
-                        Console.Write(" ");
-                    }
+                        printPiece(tab.piece(i, j));
                 }
                 
                 Console.WriteLine();
             }
-            Console.Write("+ A B C D E F G H");
-        } 
+            Console.WriteLine(" +----------------");
+            Console.WriteLine("   A B C D E F G H");
+        }
+        public static void printBoard(Board tab, bool[,] possiblePositions)
+        {
+            ConsoleColor originalBackground = Console.BackgroundColor;
+            ConsoleColor alterBackground = ConsoleColor.Blue;
+
+            for (int i = 0; i < tab.lines; i++)
+            {
+                Console.Write(8 - i + "| ");
+                for (int j = 0; j < tab.columns; j++)
+                {
+                    if(possiblePositions[i, j])
+                    {
+                        Console.BackgroundColor = alterBackground;
+                    }
+                    else
+                    {
+                        Console.BackgroundColor = originalBackground;
+                    }
+                }
+
+                Console.WriteLine();
+            }
+            Console.BackgroundColor = originalBackground;
+            Console.WriteLine(" +----------------");
+            Console.WriteLine("   A B C D E F G H");
+        }
+
         public static ChessPosition readChessPosition()
         {
             string s = Console.ReadLine();
@@ -38,16 +59,26 @@ namespace ChessGame
         }
         public static void printPiece(Piece piece)
         {
-              if(piece.color == Color.White)
+            if(piece == null)
             {
-                Console.Write(piece);
+                Console.Write("- ");
             }
             else
             {
-                ConsoleColor aux = Console.ForegroundColor;
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.Write(piece);
-                Console.ForegroundColor = aux;
+
+            
+                if(piece.color == Color.White)
+                {
+                    Console.Write(piece);
+                }
+                else
+                {
+                    ConsoleColor aux = Console.ForegroundColor;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.Write(piece);
+                    Console.ForegroundColor = aux;
+                }
+                Console.Write(" ");
             }
         }
     }
