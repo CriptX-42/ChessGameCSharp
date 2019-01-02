@@ -32,17 +32,27 @@ namespace board
             validatePosition(pos);
             return piece(pos) != null;
         }
-
+       
         public void putPiece(Piece p, Position pos)
         {
             if (therePiece(pos))
             {
                 throw new BoardException("There is already a task at this position!!!");
             }
-                pieces[pos.line, pos.column] = p;
+            pieces[pos.line, pos.column] = p;
             p.position = pos;
         }
 
+        public Piece removePiece(Position pos)
+        {
+            if (piece(pos) == null)
+            {
+                return null;
+            }
+            Piece aux = piece(pos);
+            pieces[pos.line, pos.column] = null;
+            return aux;
+        }
         public bool validPosition(Position pos)
         {
             if(pos.line<0 || pos.line >= lines || pos.column < 0 || 

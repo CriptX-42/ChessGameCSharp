@@ -18,5 +18,9 @@ namespace board
             this.color = color;
             this.qtdeMovimentos = 0;
         }
+        public void incrementAmountMoviments()
+        {
+            qtdeMovimentos++;
+        }
     }
 }

@@ -14,13 +14,23 @@ namespace ChessGame
             //Console.ReadLine();
             try
             {
-                Board tab = new Board(8, 8);
+                ChessMatch round = new ChessMatch();
+                while (!round.finished)
+                {
+                    Console.Clear();
+                    Tela.printBoard(round.tab);
 
-                tab.putPiece(new Tower(tab, Color.Black), new Position(0, 0));
-                tab.putPiece(new Tower(tab, Color.Black), new Position(1, 3));
-                tab.putPiece(new King(tab, Color.Black), new Position(0, 2));
-                tab.putPiece(new Tower(tab, Color.White), new Position(3, 5));
-                Tela.printBoard(tab);
+                    Console.WriteLine();
+                    Console.WriteLine("Type a origin position: ");
+                    Position origin = Tela.readChessPosition().toPosition();
+
+                    Console.WriteLine("Type a destiny position: ");
+                    Position destiny = Tela.readChessPosition().toPosition();
+
+                    round.executeMoviment(origin, destiny);
+                }
+                
+                
                 Console.ReadLine();
             }
             catch (BoardException e)

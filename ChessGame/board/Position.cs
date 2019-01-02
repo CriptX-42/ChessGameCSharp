@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -17,7 +17,7 @@ namespace board
         public override string ToString()
         {
             return line
-                + " , "
+                + ", "
                 + column;
         }
     }
