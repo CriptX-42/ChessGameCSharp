@@ -65,7 +65,6 @@ namespace ChessGame
             }
             else
             {
-
             
                 if(piece.color == Color.White)
                 {
