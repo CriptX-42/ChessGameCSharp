@@ -29,7 +29,7 @@ namespace ChessGame
                     Console.Clear();
                     Tela.printBoard(round.tab, possiblePositions);
 
-                    Tela.printBoard(round.tab);
+                    
 
                     Console.WriteLine("Type a destiny position: ");
                     Position destiny = Tela.readChessPosition().toPosition();
