@@ -41,6 +41,8 @@ namespace ChessGame
                     {
                         Console.BackgroundColor = originalBackground;
                     }
+                    printPiece(tab.piece(i, j));
+                    Console.BackgroundColor = originalBackground;
                 }
 
                 Console.WriteLine();
