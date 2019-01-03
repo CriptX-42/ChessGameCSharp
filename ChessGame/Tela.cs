@@ -15,7 +15,7 @@ namespace ChessGame
                 Console.Write(8 - i + "| ");
                 for (int j = 0; j < tab.columns; j++)
                 {
-                    printPiece(tab.piece(i, j));
+                        printPiece(tab.piece(i, j));
                 }
                 
                 Console.WriteLine();
@@ -41,16 +41,13 @@ namespace ChessGame
                     {
                         Console.BackgroundColor = originalBackground;
                     }
-                    printPiece(tab.piece(i, j));
-                    Console.BackgroundColor = originalBackground;
                 }
 
                 Console.WriteLine();
             }
-
+            Console.BackgroundColor = originalBackground;
             Console.WriteLine(" +----------------");
             Console.WriteLine("   A B C D E F G H");
-            Console.BackgroundColor = originalBackground;
         }
 
         public static ChessPosition readChessPosition()
