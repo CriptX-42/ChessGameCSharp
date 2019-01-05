@@ -1,0 +1,25 @@
+<<<<<<< Updated upstream
+C:\Git\CSharp\ChessGameCSharp\ChessGame\obj\Debug\netcoreapp2.1\ChessGame.csprojAssemblyReference.cache
+C:\Git\CSharp\ChessGameCSharp\ChessGame\obj\Debug\netcoreapp2.1\ChessGame.csproj.CoreCompileInputs.cache
+C:\Git\CSharp\ChessGameCSharp\ChessGame\obj\Debug\netcoreapp2.1\ChessGame.AssemblyInfoInputs.cache
+C:\Git\CSharp\ChessGameCSharp\ChessGame\obj\Debug\netcoreapp2.1\ChessGame.AssemblyInfo.cs
+C:\Git\CSharp\ChessGameCSharp\ChessGame\bin\Debug\netcoreapp2.1\ChessGame.deps.json
+C:\Git\CSharp\ChessGameCSharp\ChessGame\bin\Debug\netcoreapp2.1\ChessGame.runtimeconfig.json
+C:\Git\CSharp\ChessGameCSharp\ChessGame\bin\Debug\netcoreapp2.1\ChessGame.runtimeconfig.dev.json
+C:\Git\CSharp\ChessGameCSharp\ChessGame\bin\Debug\netcoreapp2.1\ChessGame.dll
+C:\Git\CSharp\ChessGameCSharp\ChessGame\bin\Debug\netcoreapp2.1\ChessGame.pdb
+C:\Git\CSharp\ChessGameCSharp\ChessGame\obj\Debug\netcoreapp2.1\ChessGame.dll
+C:\Git\CSharp\ChessGameCSharp\ChessGame\obj\Debug\netcoreapp2.1\ChessGame.pdb
+=======
+C:\Git\Udemy\CSharp\ChessGameCSharp\ChessGame\bin\Debug\netcoreapp2.1\ChessGame.deps.json
+C:\Git\Udemy\CSharp\ChessGameCSharp\ChessGame\bin\Debug\netcoreapp2.1\ChessGame.runtimeconfig.json
+C:\Git\Udemy\CSharp\ChessGameCSharp\ChessGame\bin\Debug\netcoreapp2.1\ChessGame.runtimeconfig.dev.json
+C:\Git\Udemy\CSharp\ChessGameCSharp\ChessGame\bin\Debug\netcoreapp2.1\ChessGame.dll
+C:\Git\Udemy\CSharp\ChessGameCSharp\ChessGame\bin\Debug\netcoreapp2.1\ChessGame.pdb
+C:\Git\Udemy\CSharp\ChessGameCSharp\ChessGame\obj\Debug\netcoreapp2.1\ChessGame.csprojAssemblyReference.cache
+C:\Git\Udemy\CSharp\ChessGameCSharp\ChessGame\obj\Debug\netcoreapp2.1\ChessGame.csproj.CoreCompileInputs.cache
+C:\Git\Udemy\CSharp\ChessGameCSharp\ChessGame\obj\Debug\netcoreapp2.1\ChessGame.AssemblyInfoInputs.cache
+C:\Git\Udemy\CSharp\ChessGameCSharp\ChessGame\obj\Debug\netcoreapp2.1\ChessGame.AssemblyInfo.cs
+C:\Git\Udemy\CSharp\ChessGameCSharp\ChessGame\obj\Debug\netcoreapp2.1\ChessGame.dll
+C:\Git\Udemy\CSharp\ChessGameCSharp\ChessGame\obj\Debug\netcoreapp2.1\ChessGame.pdb
+>>>>>>> Stashed changes

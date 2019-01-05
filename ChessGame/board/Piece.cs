@@ -4,7 +4,7 @@ using System.Text;
 
 namespace board
 {
-    class Piece
+    abstract class Piece
     {
         public Position position { get; set; }
         public Color color { get; protected set; }
@@ -18,5 +18,15 @@ namespace board
             this.color = color;
             this.qtdeMovimentos = 0;
         }
+
+        // Incremento de movimentos
+        public void incrementAmountMoviments()
+        {
+            qtdeMovimentos++;
+        }
+
+        // Matriz de booleano, verdadeiro onde a peça poder, e falso onde não poder
+        // Não tem implementação nesse classe
+        public abstract bool[,] possibleMovements();
     }
 }
