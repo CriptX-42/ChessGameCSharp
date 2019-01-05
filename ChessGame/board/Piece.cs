@@ -24,6 +24,26 @@ namespace board
         {
             qtdeMovimentos++;
         }
+        public bool existPossibleMoviments()
+        {
+            bool[,] mat = possibleMovements();
+            for (int i = 0; i < tab.lines; i++)
+            {
+                for (int j = 0; j < tab.columns; j++)
+                {
+                     if(mat[i,j] == true)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+        //verifica se a peça pode mover para uma determinada posição
+        public bool canMovieFor(Position pos)
+        {
+            return possibleMovements()[pos.line, pos.column];
+        }
 
         // Matriz de booleano, verdadeiro onde a peça poder, e falso onde não poder
         // Não tem implementação nesse classe

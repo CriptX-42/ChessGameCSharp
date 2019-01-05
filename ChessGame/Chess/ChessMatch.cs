@@ -8,8 +8,8 @@ namespace Chess
     class ChessMatch
     {
         public Board tab { get; private set; }
-        private int round;
-        private Color currentPlayer;
+        public int round { get; private set; }
+        public Color currentPlayer { get; private set; }
         public bool finished { get; private set; }
         
         public ChessMatch ()
@@ -27,6 +27,51 @@ namespace Chess
             p.incrementAmountMoviments();
             Piece capturedPiece = tab.removePiece(destiny);
             tab.putPiece(p, destiny);
+        }
+        //executa os movimentos e ainda coloca mais uma jogada, e testa se a pessa é preta ou branca
+        public void makeMoviments(Position origin, Position destiny)
+        {
+            executeMoviment(origin, destiny);
+            round++;
+            changePlayer();
+        }
+        //Testa se a pessa é preta ou branca
+        public void changePlayer()
+        {
+           if(currentPlayer == Color.White)
+            {
+                currentPlayer = Color.Black;
+            }
+            else
+            {
+                currentPlayer = Color.White;
+            }
+
+        }
+        //metodo para validar posição de origem
+        public void validateOriginPosition(Position pos)
+        {
+             if(tab.piece(pos) == null)
+            {
+                throw new BoardException("Don't exist piece in this position");
+            }
+             if(currentPlayer != tab.piece(pos).color)
+            {
+                throw new BoardException("This piece is not yours");
+            }
+            if (!tab.piece(pos).existPossibleMoviments())
+            {
+                throw new BoardException("This piece is not yours");
+
+            }
+        }
+        //metodo para validar posição de destino
+        public void validateDestinyPosition(Position origin, Position destiny)
+        {
+            if (!tab.piece(origin).canMovieFor(destiny))
+            {
+                throw new BoardException("Destiny position invalid");
+            }
         }
         private void putPieces() // aux method
         {
