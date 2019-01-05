@@ -41,21 +41,21 @@ namespace Chess
             // --- COMPASS --- //
             // ACIMA
             // N
-            pos.setValues(position.line - 1, pos.column);
+            pos.setValues(position.line - 1, position.column);
             if(tab.validPosition(pos) && canMove(pos))
             {
                 mat[pos.line, pos.column] = true;
             }
 
             //NE
-            pos.setValues(position.line - 1, pos.column + 1);
+            pos.setValues(position.line - 1, position.column + 1);
             if (tab.validPosition(pos) && canMove(pos))
             {
                 mat[pos.line, pos.column] = true;
             }
 
             //NO
-            pos.setValues(position.line - 1, pos.column - 1);
+            pos.setValues(position.line - 1, position.column - 1);
             if (tab.validPosition(pos) && canMove(pos))
             {
                 mat[pos.line, pos.column] = true;
@@ -64,14 +64,14 @@ namespace Chess
 
             // DOS LADOS
             //O
-            pos.setValues(position.line, pos.column - 1);
+            pos.setValues(position.line, position.column - 1);
             if (tab.validPosition(pos) && canMove(pos))
             {
                 mat[pos.line, pos.column] = true;
             }
 
             //E
-            pos.setValues(position.line, pos.column + 1);
+            pos.setValues(position.line, position.column + 1);
             if (tab.validPosition(pos) && canMove(pos))
             {
                 mat[pos.line, pos.column] = true;
@@ -80,7 +80,7 @@ namespace Chess
 
             // ABAIXO
             //S
-            pos.setValues(position.line + 1, pos.column);
+            pos.setValues(position.line + 1, position.column);
             if (tab.validPosition(pos) && canMove(pos))
             {
                 mat[pos.line, pos.column] = true;
@@ -94,7 +94,7 @@ namespace Chess
             }
 
             // SO
-            pos.setValues(position.line + 1, pos.column - 1);
+            pos.setValues(position.line + 1, position.column - 1);
             if (tab.validPosition(pos) && canMove(pos))
             {
                 mat[pos.line, pos.column] = true;

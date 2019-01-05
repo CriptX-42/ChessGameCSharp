@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>ChessGame</id>
+    <version>1.0.0</version>
+    <authors>ChessGame</authors>
+    <owners>ChessGame</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework=".NETCoreApp2.1">
+        <dependency id="Microsoft.NETCore.App" version="2.1.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Git\Udemy\CSharp\ChessGameCSharp\ChessGame\bin\Debug\netcoreapp2.1\ChessGame.runtimeconfig.json" target="lib\netcoreapp2.1\ChessGame.runtimeconfig.json" />
+    <file src="C:\Git\Udemy\CSharp\ChessGameCSharp\ChessGame\bin\Debug\netcoreapp2.1\ChessGame.dll" target="lib\netcoreapp2.1\ChessGame.dll" />
+  </files>
+</package>

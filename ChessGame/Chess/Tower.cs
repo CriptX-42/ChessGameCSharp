@@ -37,8 +37,9 @@ namespace Chess
 
             // --- COMPASS --- //
             // N
-            pos.setValues(pos.line - 1, pos.column);
-            while (tab.validPosition(pos) && canMove(pos)){
+            pos.setValues(position.line - 1, position.column);
+            while (tab.validPosition(pos) && canMove(pos))
+            {
                 mat[pos.line, pos.column] = true;
                 if (tab.piece(pos) != null && tab.piece(pos).color != this.color)
                 {
@@ -47,8 +48,9 @@ namespace Chess
                 pos.line = pos.line - 1;
             }
 
+
             // S
-            pos.setValues(pos.line + 1, pos.column);
+            pos.setValues(position.line + 1, position.column);
             while (tab.validPosition(pos) && canMove(pos)) {
                 mat[pos.line, pos.column] = true;
                 if (tab.piece(pos) != null && tab.piece(pos).color != this.color)
@@ -59,7 +61,7 @@ namespace Chess
             }
 
             // E
-            pos.setValues(pos.line, pos.column + 1);
+            pos.setValues(position.line, position.column + 1);
             while (tab.validPosition(pos) && canMove(pos))
             {
                 mat[pos.line, pos.column] = true;
@@ -71,7 +73,7 @@ namespace Chess
             }
 
             // O
-            pos.setValues(pos.line, pos.column - 1);
+            pos.setValues(position.line, position.column - 1);
             while (tab.validPosition(pos) && canMove(pos))
             {
                 mat[pos.line, pos.column] = true;
