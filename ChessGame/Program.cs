@@ -22,6 +22,9 @@ namespace ChessGame
 
                     
                     Console.Clear();
+
+                        Tela.printRound(round)
+
                     Tela.printBoard(round.tab);
                     Console.WriteLine();
                     Console.WriteLine("Round: " + round.round);

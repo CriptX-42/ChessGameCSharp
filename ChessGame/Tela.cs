@@ -8,6 +8,23 @@ namespace ChessGame
 {
     class Tela
     {
+        public static void printRound(ChessMatch round)
+        {
+            printBoard(round.tab);
+            Console.WriteLine(printPieceCapturead(round));
+            Console.Write("Round: " + round.round);
+            Console.Write("Waiting move: ");
+
+        }
+
+        public static void printPieceCapturead(ChessMatch round)
+        {
+            Console.WriteLine("Capturead pieces:");
+            Console.WriteLine("White: ");
+
+            printSet(round)
+
+        }
         public static void printBoard(Board tab)
         {
             for (int i = 0; i < tab.lines; i++)
