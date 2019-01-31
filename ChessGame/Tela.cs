@@ -15,6 +15,10 @@ namespace ChessGame
             printPieceCapturead(round);
             Console.WriteLine("Round: " + round.round);
             Console.Write("Waiting move: ");
+            if (round.xeque)
+            {
+                Console.WriteLine("⚠⚠⚠ XEQUE! ⚠⚠⚠");
+            }
             
         }
 

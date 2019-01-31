@@ -24,6 +24,10 @@ namespace board
         {
             qtdeMovimentos++;
         }
+        public void decrementAmountMoviments()
+        {
+            qtdeMovimentos--;
+        }
         public bool existPossibleMoviments()
         {
             bool[,] mat = possibleMovements();

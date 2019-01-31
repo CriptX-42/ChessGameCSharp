@@ -13,20 +13,21 @@ namespace Chess
         public bool finished { get; private set; }
         private HashSet<Piece> pieces;
         private HashSet<Piece> captured;
-
+        public bool xeque { get; private set; }
 
         public ChessMatch ()
         {
             tab = new Board(8, 8);
             round = 1;
             currentPlayer = Color.White;
+            xeque = false;
             pieces = new HashSet<Piece>();
             captured = new HashSet<Piece>();
             putPieces();
             finished = false;
         }
 
-        public void executeMoviment(Position origin, Position destiny)
+        public Piece executeMoviment(Position origin, Position destiny)
         {
             Piece p = tab.removePiece(origin);
             p.incrementAmountMoviments();
@@ -36,13 +37,39 @@ namespace Chess
             {
                 captured.Add(capturedPiece);
             }
+            return capturedPiece;
         }
         //executa os movimentos e ainda coloca mais uma jogada, e testa se a pessa é preta ou branca
         public void makeMoviments(Position origin, Position destiny)
         {
-            executeMoviment(origin, destiny);
+            Piece captureadPiece = executeMoviment(origin, destiny);
+            if (estaEmXeque(currentPlayer))
+            {
+                desfazMovimento(origin, destiny, captureadPiece);
+                throw new BoardException("⚠⚠ Você não pode se colocar em cheque ⚠⚠");
+            }
+            if (estaEmXeque(adversaria(currentPlayer)))
+            {
+                xeque = true;
+            }
+            else
+            {
+                xeque = false;
+            }
+
             round++;
             changePlayer();
+        }
+        public void desfazMovimento(Position origin, Position destiny, Piece captureadPiece)
+        {
+            Piece p = tab.removePiece(destiny);
+            p.decrementAmountMoviments();
+            if(captureadPiece != null)
+            {
+                tab.putPiece(captureadPiece, destiny);
+                captured.Remove(captureadPiece);
+            }
+            tab.putPiece(p, origin);
         }
         //Testa se a pessa é preta ou branca
         public void changePlayer()
@@ -133,6 +160,45 @@ namespace Chess
             colocarNovaPeca('d', 8, new King(tab, Color.Black));
             
             
+        }
+        private Color adversaria(Color color)
+        {
+            if (color == Color.White)
+            {
+                return Color.Black;
+            }
+            else
+            {
+                return Color.White;
+            }
+        }
+        private Piece king (Color color)
+        {
+            foreach (Piece x in piecesInGame(color))
+            {
+                if (x is King) // Pra eu testar se uma super classe (Peça) é uma instancia de uma subclasse (Rei) eu uso o "is"
+                {
+                    return x;
+                }
+            }
+            return null;
+        }
+        public bool estaEmXeque(Color color)
+        {
+            Piece K = king(color);
+            if(K == null)
+            {
+                throw new BoardException("⚠ Não existe rei da cor " + color + " no tabuleiro! ⚠");
+            }
+            foreach (Piece x in piecesInGame(adversaria(color)))
+            {
+                bool[,] mat = x.possibleMovements();
+                if(mat[K.position.line, K.position.column])
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
