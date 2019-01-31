@@ -23,12 +23,9 @@ namespace ChessGame
                     
                     Console.Clear();
 
-                        Tela.printRound(round)
+                        Tela.printRound(round);
 
-                    Tela.printBoard(round.tab);
-                    Console.WriteLine();
-                    Console.WriteLine("Round: " + round.round);
-                    Console.WriteLine("Waiting the player: " + round.currentPlayer);
+                    
                     Console.WriteLine();
                     Console.WriteLine("Type a origin position: ");
                     Position origin = Tela.readChessPosition().toPosition();
